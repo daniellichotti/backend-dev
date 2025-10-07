@@ -1,0 +1,6 @@
+console.log("Olá JS!!")
+console.log("Bem vindos ao Javascript!")
+console.log("Esse é o curso de front end")
+console.log("tamo sim!aaaaa!")
+console.log("tamo sim!!")
+console.log("tamo sim!!")
