@@ -1,53 +1,58 @@
-const API_URL = 'http://localhost:3000/movies'
-const API_DIRECTOR_URL = 'http://localhost:3000/directors'
+const API_URL = "http://localhost:3000"
 
 //GET
-async function getMovies() {
-    //fetch('http://localhost:3000/movies')
-    //    .then(response => response.json())
-    //    .then(data => console.log(data)).catch(error => console.log(error))
-
+async function getData(endpoint) {
     try {
-        const response = await fetch(API_URL)
+        const response = await fetch(`${API_URL}/${endpoint}`)
         const data = await response.json()
         return data
-    } catch (e) {
-        console.error('Erro: ', e)
+    } catch (error) {
+        console.log('Erro: ', error)
     }
 }
 
 async function getMovieByName(title) {
-    movieList = await getMovies()
+    const movieList = await getData('movies')
+    let movie = null
+    //console.log(movieList.map(movie => movie.title).includes(title)) 
+    //TODO
 
     for (let i = 0; i < movieList.length; i++) {
-        if (movieList[i].title === title) {
-            console.log(movieList[i])
+        if (title == movieList[i].title) {
+            movie = movieList[i]
         }
+    }
 
+    if (movie == null) {
+        console.log("Filme não encontrado")
+    } else {
+        console.log(movie)
     }
 }
 
-async function getDirectorById(id) {
-    const response = await fetch(`${API_DIRECTOR_URL}/${id}`)
-    const data = await response.json()
-    return data
+async function getMovieByDirector(directorName) {
+    const directorsList = await getData('directors')
+    const movieList = await getData('movies')
+    let director = null
+    let movies = []
+
+    for (let i = 0; i < directorsList.length; i++) {
+        if (directorName == directorsList[i].name) {
+            director = directorsList[i]
+        }
+    }
+
+    if (director == null) {
+        console.log('Diretor não encontrado!')
+        return
+    }
+
+    for (let i = 0; i < movieList.length; i++) {
+        if (director.id == movieList[i].directorId) {
+            movies.push(movieList[i])
+        }
+    }
+    console.log(movies)
 }
 
-async function getMovieById(id) {
-    const response = await fetch(`${API_URL}/${id}`)
-    const data = await response.json()
-
-    console.log(`Título: ${data.title}`)
-    console.log(`Rating: ${data.rating}`)
-    const duration = data.duration / 60
-    console.log(`Duration: ${parseInt(duration)}h ${data.duration - parseInt(duration) * 60}min`)
-    const director = await getDirectorById(data.directorId)
-    console.log('Diretor(es):')
-    director.name.split(', ').forEach(element => {
-        console.log(element)
-    });
-    console.log()
-}
-
-//getMovieByName('O Senhor dos Anéis: O Retorno do Rei')
-getMovieById(4)
+getMovieByDirector("Tarantino")
