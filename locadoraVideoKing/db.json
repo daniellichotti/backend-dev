@@ -4,7 +4,7 @@
             "id": "1",
             "directorId": "1",
             "title": "O Senhor dos Anéis: A Sociedade do Anel",
-            "rating": 5.0,
+            "rating": 5,
             "duration": 120
         },
         {
@@ -18,14 +18,14 @@
             "id": "3",
             "directorId": "1",
             "title": "O Senhor dos Anéis: O Retorno do Rei",
-            "rating": 5.0,
+            "rating": 5,
             "duration": 140
         },
         {
             "id": "4",
             "directorId": "2",
             "title": "Pump Fiction",
-            "rating": 5.0,
+            "rating": 5,
             "duration": 100
         }
     ],

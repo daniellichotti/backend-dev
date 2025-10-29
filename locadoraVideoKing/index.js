@@ -26,8 +26,21 @@ async function getMovieByName(title) {
     if (movie == null) {
         console.log("Filme não encontrado")
     } else {
-        console.log(movie)
+        formatMovieData(movie)
     }
+}
+
+function formatMovieData({ id, directorId, title, rating, duration }) {
+    console.log(`Título: ${title}`)
+    console.log(`Rating: ${rating} estrelas`)
+    console.log(`Duração: ${durationInHours(duration)}`)
+    console.log('-------------------------------------------')
+}
+
+function durationInHours(duration) {
+    const durationHours = duration / 60
+
+    return `${parseInt(durationHours)}h ${duration - parseInt(durationHours) * 60}min`
 }
 
 async function getMovieByDirector(directorName) {
@@ -55,4 +68,53 @@ async function getMovieByDirector(directorName) {
     console.log(movies)
 }
 
-getMovieByDirector("Tarantino")
+async function addMovie(movie) {
+    const response = await fetch(`${API_URL}/movies`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(movie)
+    })
+
+    if (response.ok) {
+        console.log('Filme adicionado com sucesso!')
+    } else {
+        console.log('Falha ao adicionar filme!')
+    }
+}
+
+async function deleteMovie(id) {
+    const response = await fetch(`${API_URL}/movies/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" }
+    })
+
+    if (response.ok) {
+        console.log('Filme deletado com sucesso!')
+    } else {
+        console.log('Falha ao deletar filme!')
+    }
+}
+
+async function updateMovie(id, movie) {
+    const response = await fetch(`${API_URL}/movies/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(movie)
+    })
+
+    if (response.ok) {
+        console.log('Filme alterado com sucesso!')
+    } else {
+        console.log('Falha ao alterar o filme!')
+    }
+}
+
+const movie = {
+    "rating": 5
+}
+
+//addMovie(movie)
+//deleteMovie("df01")
+//updateMovie(4, movie)
+
+getMovieByName("Pump Fiction")
