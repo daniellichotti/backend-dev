@@ -1,0 +1,88 @@
+{
+  "musicas": [
+    {
+      "id": "e020",
+      "titulo": "Master of Puppets",
+      "artista": "Metallica",
+      "album": "Master of Puppets",
+      "ano": 1986,
+      "genero": "Trash metal",
+      "duracao": "8:35"
+    }
+  ],
+  "games": [
+    {
+      "titulo": "Xadrez 2",
+      "desenvolvedora": "nossos atuais",
+      "ano": 2000,
+      "genero": "Estrategia",
+      "plataformas": [
+        "Tabuleiro"
+      ],
+      "avaliacao": 2,
+      "id": "1"
+    },
+    {
+      "id": "3",
+      "titulo": "Minecraft",
+      "desenvolvedora": "Mojang",
+      "ano": 2011,
+      "genero": "Sandbox",
+      "plataformas": [
+        "PC",
+        "PS4",
+        "Xbox",
+        "Switch",
+        "Mobile"
+      ],
+      "avaliacao": 9.2
+    },
+    {
+      "id": "4",
+      "titulo": "God of War",
+      "desenvolvedora": "Santa Monica Studio",
+      "ano": 2018,
+      "genero": "Ação e Aventura",
+      "plataformas": [
+        "PS4",
+        "PC"
+      ],
+      "avaliacao": 9.7
+    },
+    {
+      "id": "5",
+      "titulo": "Elden Ring",
+      "desenvolvedora": "FromSoftware",
+      "ano": 2022,
+      "genero": "RPG de Ação",
+      "plataformas": [
+        "PC",
+        "PS5",
+        "Xbox Series X/S"
+      ],
+      "avaliacao": 9.5
+    },
+    {
+      "id": "ec3f",
+      "titulo": "xadrez",
+      "desenvolvedora": "meus ancestrais",
+      "ano": "2",
+      "genero": "estraegia",
+      "plataformas": [
+        "tabuleiro"
+      ],
+      "avalicao": 8.5
+    },
+    {
+      "id": "deec",
+      "titulo": "The Legends of zelda",
+      "desenvolvedora": "Nitendo",
+      "ano": 1994,
+      "genero": "Rpg e aventura",
+      "plataformas": [
+        "nitendo"
+      ],
+      "avaliacao": 2.1
+    }
+  ]
+}
