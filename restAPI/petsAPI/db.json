@@ -1,0 +1,42 @@
+{
+    "pets": [
+        {
+            "id": 1,
+            "nome": "Rex",
+            "tipo": "Cachorro",
+            "idade": 5
+        },
+        {
+            "id": 2,
+            "nome": "Mimi",
+            "tipo": "Gato",
+            "idade": 3
+        },
+        {
+            "id": 3,
+            "nome": "Bob",
+            "tipo": "Papagaio",
+            "idade": 2
+        },
+        {
+            "id": "e6874c6c-6465-4811-a17a-1ef8f2ed1aa9",
+            "nome": "Sofia",
+            "tipo": "Gato",
+            "idade": 15
+        },
+        {
+            "id": "b03346ba-bc68-49ad-aec5-0bd0605005fc",
+            "nome": "Leão",
+            "tipo": "Gato",
+            "idade": 15
+        }
+    ],
+    "tutors": [
+        {
+            "id": 1,
+            "nome": "Jão",
+            "tipo": "Homem",
+            "idade": 35
+        }
+    ]
+}
