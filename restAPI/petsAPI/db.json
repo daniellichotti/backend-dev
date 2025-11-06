@@ -29,6 +29,18 @@
             "nome": "Leão",
             "tipo": "Gato",
             "idade": 15
+        },
+        {
+            "id": "e5bd80ae-8adf-441b-b4dc-275d55c22fdc",
+            "nome": "Onça",
+            "tipo": "Gato",
+            "idade": 16
+        },
+        {
+            "id": "c8511fba-3f5e-44cc-ae83-6e16218a6c39",
+            "nome": "Frajola",
+            "tipo": "Cachorro",
+            "idade": 10
         }
     ],
     "tutors": [
