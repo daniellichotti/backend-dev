@@ -57,12 +57,27 @@ fastify.put('/pets/:id', function (request, response) {
         return response.code(404).send({ error: 'Pet não encontrado!' })
     }
 
-    pets[index] = { id: request.params.id, ...request.body }    
+    pets[index] = { id: request.params.id, ...request.body }
 
     saveToDB()
 
     response.code(200).send(pets[index])
 
+})
+
+fastify.delete('/pets/:id', function (request, response) {
+    const index = pets.findIndex(p => String(p.id) == request.params.id)
+
+    if (index === -1) {
+        return response.code(404).send({ error: 'Pet não encontrado!' })
+    }
+
+    pets.splice(index, 1)
+    //npm install --save-dev nodemon
+
+    saveToDB()
+
+    response.code(200).send({ message: 'Resource deleted' })
 })
 
 

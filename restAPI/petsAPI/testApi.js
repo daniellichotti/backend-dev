@@ -50,4 +50,16 @@ async function putPet() {
     }
 }
 
-putPet()
+async function deletePet() {
+    const response = await fetch(`http://[::1]:3000/pets/e5bd80ae-8adf-441b-b4dc-275d55c22fdc`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        console.log('Pet deletado com sucesso!')
+    } else {
+        console.log('Falha ao deletar pet!')
+    }
+}
+
+deletePet()
