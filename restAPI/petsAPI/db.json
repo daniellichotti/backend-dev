@@ -31,12 +31,5 @@
             "idade": 15
         }
     ],
-    "tutors": [
-        {
-            "id": 1,
-            "nome": "Jão",
-            "tipo": "Homem",
-            "idade": 35
-        }
-    ]
+    "tutors": []
 }

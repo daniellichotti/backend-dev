@@ -16,6 +16,24 @@ async function addPet() {
     }
 }
 
+async function addTutor() {
+    const response = await fetch(`http://[::1]:3000/tutors`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            "nome": "Jão",
+            "tipo": "Homem",
+            "idade": 35
+        })
+    })
+
+    if (response.ok) {
+        console.log('Tutor adicionado com sucesso!')
+    } else {
+        console.log('Tutor ao adicionar pet!')
+    }
+}
+
 async function patchPet() {
     const response = await fetch(`http://[::1]:3000/pets/c8511fba-3f5e-44cc-ae83-6e16218a6c39`, {
         method: "PATCH",
@@ -32,9 +50,25 @@ async function patchPet() {
     }
 }
 
+async function patchTutor() {
+    const response = await fetch(`http://[::1]:3000/tutors/b49b0084-d92d-49a0-8be2-c66f0345f613`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            "idade": 36
+        })
+    })
+
+    if (response.ok) {
+        console.log('Tutor atualizado com sucesso!')
+    } else {
+        console.log('Falha ao atualizar Tutor!')
+    }
+}
+
 async function putPet() {
     const response = await fetch(`http://[::1]:3000/pets/c8511fba-3f5e-44cc-ae83-6e16218a6c39`, {
-        method: "PATCH",
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             "nome": "Frajola",
@@ -50,6 +84,24 @@ async function putPet() {
     }
 }
 
+async function putTutor() {
+    const response = await fetch(`http://[::1]:3000/tutors/b49b0084-d92d-49a0-8be2-c66f0345f613`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            "nome": "Jão",
+            "tipo": "Homem",
+            "idade": 35
+        })
+    })
+
+    if (response.ok) {
+        console.log('Tutor atualizado com sucesso!')
+    } else {
+        console.log('Falha ao atualizar Tutor!')
+    }
+}
+
 async function deletePet() {
     const response = await fetch(`http://[::1]:3000/pets/e5bd80ae-8adf-441b-b4dc-275d55c22fdc`, {
         method: "DELETE"
@@ -62,4 +114,16 @@ async function deletePet() {
     }
 }
 
-deletePet()
+async function deleteTutor() {
+    const response = await fetch(`http://[::1]:3000/tutors/b49b0084-d92d-49a0-8be2-c66f0345f613`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        console.log('Tutor deletado com sucesso!')
+    } else {
+        console.log('Falha ao deletar Tutor!')
+    }
+}
+
+deleteTutor()
