@@ -29,6 +29,15 @@
             "nome": "Leão",
             "tipo": "Gato",
             "idade": 15
+        },
+        {
+            "id": "37a3c7b5-a8d8-48ea-a8b5-2d23560b8375"
+        },
+        {
+            "id": "1b5e95a6-3d5b-4872-8239-c03877ab5942",
+            "nome": "Cavalo",
+            "tipo": "Equino",
+            "idade": 15
         }
     ],
     "tutors": []

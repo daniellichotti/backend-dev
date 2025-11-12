@@ -3,6 +3,17 @@ import { v4 } from "uuid"
 export async function petsRoutes(fastify, opts) {
   const { pets, saveToDB } = opts
 
+  const petSchema = {
+    type: 'object',
+    required: ['nome', 'tipo', 'idade'],
+    properties: {
+      id: { type: 'string' },
+      nome: { type: 'string' },
+      tipo: { type: 'string' },
+      idade: { type: 'integer' }
+    }
+  }
+
   fastify.get('/', function (request, response) {
     response.send(pets)
   })
@@ -13,7 +24,24 @@ export async function petsRoutes(fastify, opts) {
     pet ? response.send(pet) : response.code(404).send({ error: 'Pet não encontrado!' })
   })
 
-  fastify.post('/', function (request, response) {
+  fastify.post('/', {
+    schema: {
+      description: 'Cria um novo pet',
+      tags: ['Pets'],
+      body: {
+        type: 'object',
+        required: ['nome', 'tipo', 'idade'],
+        properties: {
+          nome: { type: 'string' },
+          tipo: { type: 'string' },
+          idade: { type: 'integer' }
+        }
+      }
+    },
+    response: {
+      201: petSchema
+    }
+  }, function (request, response) {
     const newPet = { id: v4(), ...request.body }
 
     pets.push(newPet)
