@@ -1,10 +1,13 @@
 import cors from "@fastify/cors";
 import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUi from "@fastify/swagger-ui";
+import { configDotenv } from "dotenv";
 import Fastify from "fastify";
 import fs from 'fs';
 import { petsRoutes } from "./routes/pets.js";
 import { tutorsRoutes } from "./routes/tutors.js";
+
+configDotenv()
 
 const db = JSON.parse(fs.readFileSync('./db.json', 'utf-8'))
 const pets = db.pets
@@ -39,7 +42,7 @@ fastify.register(petsRoutes, { prefix: '/pets', pets, saveToDB })
 fastify.register(tutorsRoutes, { prefix: '/tutors', tutors, saveToDB })
 
 
-fastify.listen({ port: 3000 }, function (err, address) {
+fastify.listen({ port: process.env.PORT ?? 3000 }, function (err, address) {
     if (err) {
         fastify.log.error(err)
         process.exit(1)
