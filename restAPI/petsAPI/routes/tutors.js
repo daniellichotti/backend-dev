@@ -3,6 +3,16 @@ import { v4 } from "uuid"
 export async function tutorsRoutes(fastify, opts) {
   const { tutors, saveToDB } = opts
 
+  const tutorsSchema = {
+    type: 'object',
+    required: ['nome', 'idade'],
+    properties: {
+      id: { type: 'string' },
+      nome: { type: 'string' },
+      idade: { type: 'integer' }
+    }
+  }
+
   fastify.get('/', function (request, response) {
     response.send(tutors)
   })
@@ -13,7 +23,23 @@ export async function tutorsRoutes(fastify, opts) {
     tutor ? response.send(tutor) : response.code(404).send({ error: 'Tutor não encontrado!' })
   })
 
-  fastify.post('/', function (request, response) {
+  fastify.post('/', {
+    schema: {
+      description: 'Cria um novo tutor',
+      tags: ['Tutors'],
+      body: {
+        type: 'object',
+        required: ['nome', 'idade'],
+        properties: {
+          nome: { type: 'string' },
+          idade: { type: 'integer' }
+        }
+      }
+    },
+    response: {
+      201: tutorsSchema
+    }
+  }, function (request, response) {
     const newTutor = { id: v4(), ...request.body }
 
     tutors.push(newTutor)

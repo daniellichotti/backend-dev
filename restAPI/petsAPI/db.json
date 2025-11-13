@@ -40,5 +40,16 @@
             "idade": 15
         }
     ],
-    "tutors": []
+    "tutors": [
+        {
+            "id": "65393757-dbbc-44d1-9c15-d911344c6c71",
+            "nome": "Matheus",
+            "idade": 38
+        },
+        {
+            "id": "2f772f85-aa0d-4e7d-af85-182652d1a8ed",
+            "nome": "Souza",
+            "idade": 23
+        }
+    ]
 }
