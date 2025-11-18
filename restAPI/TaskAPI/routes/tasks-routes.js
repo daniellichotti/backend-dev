@@ -13,4 +13,8 @@ export async function taskRoutes(fastify, opts) {
 
         res.send(tasks)
     })
+
+        .create({
+            data: { title, description }
+        })
 }
