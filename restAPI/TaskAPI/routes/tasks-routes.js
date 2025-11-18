@@ -1,4 +1,4 @@
-import { sendEmail } from "../utils/sendEmail.js"
+import { prisma } from '../lib/prisma.js'
 
 export async function taskRoutes(fastify, opts) {
 
@@ -9,6 +9,8 @@ export async function taskRoutes(fastify, opts) {
         //     `<h1>Olá meu amigo</h1>
         //     <p>Mensagem enviada com sucesso</p>`
         // )
-        res.send('Lista de tarefas')
+        const tasks = await prisma.task.findMany()
+
+        res.send(tasks)
     })
 }

@@ -3,14 +3,18 @@
 npm install fastify @fastify/swagger @fastify/swagger-ui @fastify/cors dotenv uuid nodemon nodemailer
 
 ## Prisma e PrismaClient
+
 ```
 npm install prisma --save-dev
 npm install @prisma/client
 ```
 
 ### Inicializar Prisma:
-`npx prisma init --datasource-provider sqlite`
 
+`npx prisma init --datasource-provider sqlite`
+depois fazer o migrate e o generate:
+`npx prisma migrate dev --name init`
+`npx prisma generate`
 
 API de Tarefas (To-Do List)
 
