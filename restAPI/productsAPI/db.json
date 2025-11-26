@@ -1,0 +1,42 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "arroz",
+            "price": 1999.99,
+            "quantity": 0,
+            "estoque": 0,
+            "nome": "arroz"
+        },
+        {
+            "id": "dcca83ed-dcb5-476a-b7a3-ce9ec7e23223",
+            "nome": "Monitor",
+            "price": 999.99,
+            "estoque": 10
+        },
+        {
+            "id": "61e9cd0c-4a80-4b81-9bf6-cd79c05c9427",
+            "nome": "string",
+            "price": -10,
+            "quantity": 0
+        },
+        {
+            "id": "2b9ce015-ba28-4a2c-a770-0d0ef80a9f17",
+            "nome": "string",
+            "price": -10,
+            "quantity": 0
+        },
+        {
+            "id": "2b9ce015-ba28-4a2c-a770-0d0ef80a9f17",
+            "nome": "string",
+            "price": 1,
+            "quantity": 0
+        },
+        {
+            "id": "a8c8342b-223d-4256-8986-8ef8930e082f",
+            "nome": "string",
+            "price": 20,
+            "quantity": 0
+        }
+    ]
+}
