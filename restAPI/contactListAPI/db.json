@@ -1,0 +1,35 @@
+{
+    "contactList": [
+        {
+            "id": "1",
+            "name": "Leo",
+            "phone": "99999-9999",
+            "email": "leozinho@gmail.com",
+            "tags": [
+                "aluno",
+                "amigo",
+                "senai"
+            ]
+        },
+        {
+            "id": "24",
+            "name": "Souza",
+            "phone": "242424-2424",
+            "email": "mauricinho@gmail.com",
+            "tags": [
+                "aluno",
+                "amigo",
+                "senai"
+            ]
+        },
+        {
+            "id": "000266bf-6bd1-4a6f-9fe7-4a7445e8896d",
+            "name": "string",
+            "phone": "string",
+            "email": "user@example.com",
+            "tags": [
+                "string"
+            ]
+        }
+    ]
+}
