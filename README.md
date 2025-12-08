@@ -33,3 +33,9 @@ Docker run:
 ```
  docker run -d --name meu-primeiro-container-sql -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_DATABASE=my-data-base -p 3306:3306 mysql:8
 ```
+
+docker exec:
+
+```
+docker exec -it <id do container> mysql -u root -p
+```

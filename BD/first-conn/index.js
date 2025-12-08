@@ -53,7 +53,23 @@ function getUserById(id) {
   })
 }
 
+function fetchLastUsers(qnt) {
+  const sqlQuery = "SELECT * FROM users ORDER BY id DESC LIMIT ?;"
+  const values = [qnt]
+
+  conn.query(sqlQuery, values, (err, results) => {
+    if (err) {
+      console.log("Erro ao buscar todos usuários!", err)
+      return
+    }
+
+    console.log("Usuários encontrados: ")
+    console.log(results)
+  })
+}
+
 //createUser("Leo", "leozinhonew@email.com", "123")
 //fetchUsersTable()
-getUserById(3)
+//getUserById(1)
+fetchLastUsers(3)
 conn.end()
