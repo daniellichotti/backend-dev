@@ -53,8 +53,8 @@ function getUserById(id) {
   })
 }
 
-function fetchLastUsers(qnt) {
-  const sqlQuery = "SELECT * FROM users ORDER BY id DESC LIMIT ?;"
+function fetchLastUsers(table, qnt) {
+  const sqlQuery = `SELECT * FROM ${table} ORDER BY id DESC LIMIT ?;`
   const values = [qnt]
 
   conn.query(sqlQuery, values, (err, results) => {
@@ -68,8 +68,38 @@ function fetchLastUsers(qnt) {
   })
 }
 
+function updatePassword(email, newPassword) {
+  const sqlQuery = "UPDATE users SET senha=? WHERE email=?"
+  const values = [newPassword, email]
+
+  conn.query(sqlQuery, values, (err, results) => {
+    if (err) {
+      console.log(`Erro ao atualizar senha do usuário ${email}!`, err)
+      return
+    }
+
+    console.log("Senha atualizada!")
+  })
+}
+
+function deleteUser(id) {
+  const sqlQuery = "DELETE FROM alunos WHERE id = ?;"
+  const values = [id]
+
+  conn.query(sqlQuery, values, (err, results) => {
+    if (err) {
+      console.log(`Erro ao deletar aluno!`, err)
+      return
+    }
+
+    console.log("Aluno deletado!")
+  })
+}
+
 //createUser("Leo", "leozinhonew@email.com", "123")
+//updatePassword("gabriel@gmail.com", "24")
 //fetchUsersTable()
 //getUserById(1)
-fetchLastUsers(3)
+deleteUser(7)
+fetchLastUsers('alunos', 1)
 conn.end()
