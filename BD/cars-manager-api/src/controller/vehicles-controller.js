@@ -1,10 +1,16 @@
-import { createVehicle, getAllVehicles } from "../services/vehicles-services.js"
+import { createVehicle, getAllVehicles, getVehicleById } from "../services/vehicles-services.js"
 
 
 export async function listVehicles(req, res) {
   const vehicles = await getAllVehicles()
 
   return res.send(vehicles)
+}
+
+export async function listVehiclesById(req, res) {
+  const [vehicle] = await getVehicleById(req.params.id)
+
+  return res.code(200).send(vehicle)
 }
 
 export async function addVehicles(req, res) {
