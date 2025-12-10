@@ -1,6 +1,6 @@
 # Comando usados para instalar as bibliotecas
 
-npm install fastify @fastify/swagger @fastify/swagger-ui @fastify/cors dotenv uuid nodemon nodemailer
+npm install fastify @fastify/swagger @fastify/swagger-ui @fastify/cors dotenv uuid nodemon nodemailer mysql2
 
 ## Prisma e PrismaClient
 
