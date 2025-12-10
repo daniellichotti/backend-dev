@@ -1,5 +1,9 @@
+import { getAllVehicles } from "../services/vehicles-services.js"
+
 export async function vehiclesRoutes(fastify, opt) {
   fastify.get('/', async (req, res) => {
-    res.send("Hello World")
+    const vehicles = await getAllVehicles()
+
+    res.send(vehicles)
   })
 }
