@@ -11,6 +11,13 @@ export async function getVehicleById(id) {
   return vehicle;
 }
 
+export async function updateVehicleService(id, body) {
+  const { type, brand, model, year } = body
+  const [vehicle] = await db.query("UPDATE vehicles SET type = ?, brand = ?, model = ?, year = ? WHERE id = ?", [type, brand, model, year, id]);
+
+  return vehicle;
+}
+
 export async function createVehicle(type, brand, model, year) {
   const [result] = await db.query("INSERT INTO vehicles (id, type, brand, model, year) VALUES (?, ?, ?, ?, ?)", [v4(), type, brand, model, year]);
 
