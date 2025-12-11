@@ -1,4 +1,4 @@
-import { createVehicle, getAllVehicles, getVehicleById, updateVehicleService } from "../services/vehicles-services.js"
+import { createVehicle, deleteVehicleService, getAllVehicles, getVehicleById, updateVehicleService } from "../services/vehicles-services.js"
 
 
 export async function listVehicles(req, res) {
@@ -17,6 +17,16 @@ export async function updateVehicle(req, res) {
   const updatedVehicle = await updateVehicleService(req.params.id, req.body)
 
   return res.code(200).send(updatedVehicle)
+}
+
+export async function deleteVehicle(req, res) {
+  const removedVehicle = await deleteVehicleService(req.params.id)
+
+  if (removedVehicle.affectedRows !== 1) {
+    return res.code(404).send("Vehicle not deleted!")
+  }
+
+  return res.code(200).send("Vehicle deleted!")
 }
 
 export async function addVehicles(req, res) {

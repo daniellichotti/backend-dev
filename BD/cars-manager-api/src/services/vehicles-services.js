@@ -18,6 +18,12 @@ export async function updateVehicleService(id, body) {
   return vehicle;
 }
 
+export async function deleteVehicleService(id) {
+  const [vehicle] = await db.query("DELETE FROM vehicles WHERE id = ?", [id]);
+
+  return vehicle;
+}
+
 export async function createVehicle(type, brand, model, year) {
   const [result] = await db.query("INSERT INTO vehicles (id, type, brand, model, year) VALUES (?, ?, ?, ?, ?)", [v4(), type, brand, model, year]);
 
