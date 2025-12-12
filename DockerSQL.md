@@ -6,6 +6,11 @@ docker run -d --name meu-primeiro-container-sql -e MYSQL_ROOT_PASSWORD=123 -e MY
 ```
 docker ps
 ```
+
+### Listar todos os containers inclusive pausados: 
+```
+docker ps -a
+```
 ### Iniciar container: 
 ```
 docker start <container_id>
